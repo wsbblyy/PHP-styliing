@@ -1,8 +1,8 @@
-#PHP 项目规范
+PHP 项目规范
 
 ---
 
-#####框架推荐:
+##### 框架推荐:
 PHP框架功能大致为:
 [路由, 数据库, 中间件, 触发器, 辅助功能]
 
@@ -22,25 +22,25 @@ PHP框架功能大致为:
 5. 触发器
 
 ---
-
-#####代码结构
+ 
+##### 代码结构
 
 [Controllers, Services, Models]
 这三个模块分别作用是IO, 业务逻辑, 数据处理
-######Controllers
+###### Controllers
 在Controller中只做input\output, 因为公共参数验证在中间件中已经验证过了, 拿到input后不需要做验证除非有独特的参数验证, 或者参数后把参数放入Service里, Servicec处理逻辑后将返回值传给Controller
-######Services
+###### Services
 Service中是处理大量逻辑的地方, input是从Controller中获得的, 处理的数据是从Model中获得的, 这里是大量放入if判断和for循环的地方
-######Models
+###### Models
 所有数据服务都放在model层, 不管是访问redis还是mysql都在model层去操作, 关于mysql的Query, 尽量手写, 到时候很容易把其中的Query抽离出来作分析
 
 ---
-#####关于PHP瓶颈
+##### 关于PHP瓶颈
 
 从以往的经验中理解, 从项目角度出发, PHP的瓶颈大部分集中在服务中, mysql的读写, 理想情况下, 数据的读取一般是从缓存获取, 个别情况从数据库中获取数据. 所有写入数据都用走异步服务.
 
 ---
-#####书写习惯
+##### 书写习惯
 1. Namespace
 一般来说一个模块一个命名空间, Controller, Service, Model, Library(共用方法) 调用方法时直接 
 `\Services\SomeClass::function()`

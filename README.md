@@ -46,12 +46,12 @@ Service中是处理大量逻辑的地方, input是从Controller中获得的, 处
 `\Services\SomeClass::function()`
 
 2. 所有东西起名规则
-`Namesapces` : 开头大写 + 驼峰
-`Classes`    : 开头大写 + 驼峰
-`Functions`  : 开头小写 + 驼峰  
-`variables`  : 小写 + 下划线 + 小写
-`riviate_variables` : 开头下划线 + 小写
-`CONSTENT`   : 全大写 + 下划线
+`Namesapces` : 开头大写 + 驼峰   
+`Classes`    : 开头大写 + 驼峰   
+`Functions`  : 开头小写 + 驼峰     
+`variables`  : 小写 + 下划线 + 小写   
+`riviate_variables` : 开头下划线 + 小写   
+`CONSTENT`   : 全大写 + 下划线   
 
 3. 方法返回值
 所有方法返回值尽量不用单一返回值

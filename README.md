@@ -3,18 +3,18 @@ PHP 项目规范
 ---
 
 ##### 框架推荐:
-PHP框架功能大致为:
-[路由, 数据库, 中间件, 触发器, 辅助功能]
-
+PHP框架功能大致为:   
+[路由, 数据库, 中间件, 触发器, 辅助功能]     
+   
 建议选择轻型框架, Debug成本低
 
-1. 路由
+1. 路由   
 路由放进统一的router文件, 避免使用方法名路由
 
-2. 数据库
+2. 数据库     
 尽量自己写Query
 
-3. 中间件
+3. 中间件   
 把公共的判断放入中间件, 可以在路由曾实现, 可以在base controller实现
 
 4. 辅助功能
@@ -25,7 +25,7 @@ PHP框架功能大致为:
  
 ##### 代码结构
 
-[Controllers, Services, Models]
+[Controllers, Services, Models]   
 这三个模块分别作用是IO, 业务逻辑, 数据处理
 ###### Controllers
 在Controller中只做input\output, 因为公共参数验证在中间件中已经验证过了, 拿到input后不需要做验证除非有独特的参数验证, 或者参数后把参数放入Service里, Servicec处理逻辑后将返回值传给Controller
@@ -41,12 +41,12 @@ Service中是处理大量逻辑的地方, input是从Controller中获得的, 处
 
 ---
 ##### 书写习惯
-1. Namespace
+1. Namespace   
 一般来说一个模块一个命名空间, Controller, Service, Model, Library(共用方法) 调用方法时直接 
 `\Services\SomeClass::function()`
 
-2. 所有东西起名规则
-`Namesapces` : 开头大写 + 驼峰   
+2. 所有东西起名规则   
+`Namesapces` : 开头大写 + 驼峰    
 `Classes`    : 开头大写 + 驼峰   
 `Functions`  : 开头小写 + 驼峰     
 `variables`  : 小写 + 下划线 + 小写   
